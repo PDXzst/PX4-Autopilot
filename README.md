@@ -12,7 +12,7 @@ https://blog.csdn.net/qq_38250687/article/details/123251913
 launch文件夹和models文件夹中带_cp后缀的为本人修改的  
 **************************************
 ### 实现无人机定高飞行
-* [PDXzst-ros功能包](https://github.com/PDXzst/ros_ws2.0)下载功能包offboard_pkg  
+* [PDXzst-ros功能包](https://github.com/PDXzst/ros_ws/tree/main/catkin_ws/src)下载功能包offboard_pkg  
 * 运行gazebo
 
       roslaunch px4 mavros_posix_sitl_cp.launch
