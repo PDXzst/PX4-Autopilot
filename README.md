@@ -34,6 +34,7 @@ launch文件夹和models文件夹中带_cp后缀的为本人修改的
 |:---:|:---:|
 |iris|自带无人机|
 |iris_crazyflie_cp|目前可以的crazyflie无人机（暂不能实现定高飞行）|
+|crazyflie|crazyflie无人机（使用iris机身文件，可定高飞行）|
 
 </div>
 
