@@ -18,24 +18,28 @@ PX4-Autopilot/Tools/sitl_gazebo/worlds 存放worlds
 ```
 roslaunch px4 mavros_posix_sitl_cp.launch
 ```
-&emsp;地图出现一架无人机：  
+地图出现一架无人机：  
 <div align="center">
+  
 ![](photos/single_uav_sitl.png)
 </div>
+
 * 运行板载控制程序  
 ```
 roslaunch offboard_pkg offboard_node_start.launch
 ```
-* 等待   
-&emsp;起飞成功：  
+* 等待  
+起飞成功： 
 <div align="center">
-![](photos/fly_success.png)
+  
+![](/photos/fly_success.png)
 </div>
-**注**：`iris_crazyflie`无人机暂时无法实现定高控制，请等待后续更新`demo`   
+
+**注**:`iris_crazyflie`无人机暂时无法实现定高控制，请等待后续更新`demo`   
 ***
 ### 更改model
 * launch文件中更改`vehicle_model`  
-* 目前在使用的无人机：  
+* 目前在使用的无人机：
 <div align="center">
   
 |无人机|介绍|
@@ -48,15 +52,19 @@ roslaunch offboard_pkg offboard_node_start.launch
 
 ***
 ### 更改world
-* launch文件中更改`world`  
+* `launch`文件中更改`world`  
 ***
 ### 多架无人机gazebo仿真
 ```
 roslaunch px4 multi_uav_mavros_sitl_cp.launch
 ```
+运行结果如下：
 <div align="center">
-![](photos/multi_uav_sitl.png)
+  
+![](/photos/multi_uav_sitl.png)
+
 </div>
+
 ***
 
 ### 后续
