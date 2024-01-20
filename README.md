@@ -1,9 +1,13 @@
+# 基于PX4的无人机定位demo
+本项目旨在实现基于PX4飞控`uwb imu`进行`eskf`的多无人机定位项目
+***
 ### 配置
 * 本人使用`ubuntu20.04`  
 * 如果还没下载编译`PX4`，建议参考如下网站：  
 https://docs.qq.com/doc/DZlNOVnhaV0hkaktL?dver=  
 https://blog.csdn.net/qq_38250687/article/details/123251913
-****************************************
+***
+***
 ### 主要文件存放位置
 ```
 PX4-Autopilot/launch 存放launch文件  
@@ -11,6 +15,7 @@ PX4-Autopilot/Tools/sitl_gazebo/models 存放models
 PX4-Autopilot/Tools/sitl_gazebo/worlds 存放worlds  
 ```
 `launch`文件夹和`models`文件夹中带`_cp`后缀的为本人修改的  
+***
 ***
 ### 实现无人机定高飞行
 * [PDXzst-ros功能包](https://github.com/PDXzst/ros_ws/tree/main/catkin_ws/src)下载功能包offboard_pkg  
@@ -37,6 +42,7 @@ roslaunch offboard_pkg offboard_node_start.launch
 
 **注**:`iris_crazyflie`无人机暂时无法实现定高控制，请等待后续更新`demo`   
 ***
+***
 ### 更改model
 * launch文件中更改`vehicle_model`  
 * 目前在使用的无人机：
@@ -51,8 +57,10 @@ roslaunch offboard_pkg offboard_node_start.launch
 </div>
 
 ***
+***
 ### 更改world
 * `launch`文件中更改`world`  
+***
 ***
 ### 多架无人机gazebo仿真
 ```
@@ -66,8 +74,10 @@ roslaunch px4 multi_uav_mavros_sitl_cp.launch
 </div>
 
 ***
-
+***
 ### 后续
+- [X] 多无人机`虚拟uwb`系统
+- [ ] 多无人机`eskf`融合定位系统的搭建
 
 
   
