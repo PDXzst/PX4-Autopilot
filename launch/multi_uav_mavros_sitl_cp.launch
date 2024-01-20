@@ -5,9 +5,9 @@
     <!-- vehicle model and world -->
     <arg name="est" default="ekf2"/>
     <arg name="vehicle" default="iris"/>
-    <arg name="uav0_model" default="iris_crazyflie_cp"/>
-    <arg name="uav1_model" default="iris_crazyflie_cp"/>
-    <arg name="uav2_model" default="iris_crazyflie_cp"/>
+    <arg name="uav0_model" default="crazyflie"/>
+    <arg name="uav1_model" default="crazyflie"/>
+    <arg name="uav2_model" default="crazyflie"/>
     <arg name="world" default="$(find mavlink_sitl_gazebo)/worlds/neighborhood.world"/>
     <!-- gazebo configs -->
     <arg name="gui" default="true"/>

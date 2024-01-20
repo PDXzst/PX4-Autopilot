@@ -12,7 +12,7 @@
     <!-- vehicle model and world -->
     <arg name="est" default="ekf2"/>
     <arg name="vehicle" default="iris"/>
-    <arg name="vehicle_model" default="iris_crazyflie_cp"/>
+    <arg name="vehicle_model" default="crazyflie"/>
     <arg name="world" default="$(find mavlink_sitl_gazebo)/worlds/neighborhood.world"/>
     <arg name="sdf" default="$(find mavlink_sitl_gazebo)/models/$(arg vehicle_model)/$(arg vehicle_model).sdf"/>
 
