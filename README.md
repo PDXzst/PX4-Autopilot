@@ -31,7 +31,8 @@ roslaunch px4 mavros_posix_sitl_cp.launch
 
 * 运行板载控制程序  
 ```
-roslaunch offboard_pkg offboard_node_start.launch
+rosrun offboard_pkg offboard_node
+
 ```
 * 等待  
 起飞成功： 
