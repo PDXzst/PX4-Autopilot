@@ -1,0 +1,2113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 4.0.2 commit date:2023-12-05, commit time:07:41, hash:9be62e85b727</authoring_tool>
+    </contributor>
+    <created>2024-02-21T16:11:12</created>
+    <modified>2024-02-21T16:11:12</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="brick_wallbrick_wall-effect">
+      <profile_COMMON>
+        <newparam sid="pavement_04_disp_1k_png-surface">
+          <surface type="2D">
+            <init_from>pavement_04_disp_1k_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="pavement_04_disp_1k_png-sampler">
+          <sampler2D>
+            <source>pavement_04_disp_1k_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="pavement_04_disp_1k_png-sampler" texcoord="UV 贴图"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="pavement_04_disp_1k_png" name="pavement_04_disp_1k_png">
+      <init_from>pavement_04_disp_1k.png</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="brick_wallbrick_wall-material" name="brick_wallbrick_wall">
+      <instance_effect url="#brick_wallbrick_wall-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="立方体_045-mesh" name="立方体.045">
+      <mesh>
+        <source id="立方体_045-mesh-positions">
+          <float_array id="立方体_045-mesh-positions-array" count="24">-3.144823 -0.1071872 -3.538504 -3.144823 -0.1071872 3.538504 -3.144823 0.1071872 -3.538504 -3.144823 0.1071872 3.538504 3.144823 -0.1071872 -3.538504 3.144823 -0.1071872 3.538504 3.144823 0.1071872 -3.538504 3.144823 0.1071872 3.538504</float_array>
+          <technique_common>
+            <accessor source="#立方体_045-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_045-mesh-normals">
+          <float_array id="立方体_045-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_045-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_045-mesh-map-0">
+          <float_array id="立方体_045-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_045-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_045-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_045-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_045-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_045-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_045-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_044-mesh" name="立方体.044">
+      <mesh>
+        <source id="立方体_044-mesh-positions">
+          <float_array id="立方体_044-mesh-positions-array" count="24">-4.762945 -0.3748684 -3.538508 -4.762945 -0.3748684 3.538508 -4.762945 0.3748684 -3.538508 -4.762945 0.3748684 3.538508 4.762945 -0.3748684 -3.538508 4.762945 -0.3748684 3.538508 4.762945 0.3748684 -3.538508 4.762945 0.3748684 3.538508</float_array>
+          <technique_common>
+            <accessor source="#立方体_044-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_044-mesh-normals">
+          <float_array id="立方体_044-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_044-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_044-mesh-map-0">
+          <float_array id="立方体_044-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_044-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_044-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_044-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_044-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_044-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_044-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_043-mesh" name="立方体.043">
+      <mesh>
+        <source id="立方体_043-mesh-positions">
+          <float_array id="立方体_043-mesh-positions-array" count="24">-5.579268 -0.3748684 -3.538508 -5.579268 -0.3748684 3.538508 -5.579268 0.3748684 -3.538508 -5.579268 0.3748684 3.538508 5.579268 -0.3748684 -3.538508 5.579268 -0.3748684 3.538508 5.579268 0.3748684 -3.538508 5.579268 0.3748684 3.538508</float_array>
+          <technique_common>
+            <accessor source="#立方体_043-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_043-mesh-normals">
+          <float_array id="立方体_043-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_043-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_043-mesh-map-0">
+          <float_array id="立方体_043-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_043-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_043-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_043-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_043-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_043-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_043-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_042-mesh" name="立方体.042">
+      <mesh>
+        <source id="立方体_042-mesh-positions">
+          <float_array id="立方体_042-mesh-positions-array" count="24">-6.461432 -0.3748684 -3.538508 -6.461432 -0.3748684 3.538508 -6.461432 0.3748684 -3.538508 -6.461432 0.3748684 3.538508 6.461432 -0.3748684 -3.538508 6.461432 -0.3748684 3.538508 6.461432 0.3748684 -3.538508 6.461432 0.3748684 3.538508</float_array>
+          <technique_common>
+            <accessor source="#立方体_042-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_042-mesh-normals">
+          <float_array id="立方体_042-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_042-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_042-mesh-map-0">
+          <float_array id="立方体_042-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_042-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_042-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_042-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_042-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_042-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_042-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_041-mesh" name="立方体.041">
+      <mesh>
+        <source id="立方体_041-mesh-positions">
+          <float_array id="立方体_041-mesh-positions-array" count="24">-0.2065811 -2.258827 -3.538504 -0.2065811 -2.258827 3.538504 -0.2065811 2.258827 -3.538504 -0.2065811 2.258827 3.538504 0.2065811 -2.258827 -3.538504 0.2065811 -2.258827 3.538504 0.2065811 2.258827 -3.538504 0.2065811 2.258827 3.538504</float_array>
+          <technique_common>
+            <accessor source="#立方体_041-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_041-mesh-normals">
+          <float_array id="立方体_041-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_041-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_041-mesh-map-0">
+          <float_array id="立方体_041-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_041-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_041-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_041-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_041-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_041-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_041-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_040-mesh" name="立方体.040">
+      <mesh>
+        <source id="立方体_040-mesh-positions">
+          <float_array id="立方体_040-mesh-positions-array" count="24">-3.624405 -0.2135667 -3.538502 -3.624405 -0.2135667 3.538502 -3.624405 0.2135667 -3.538502 -3.624405 0.2135667 3.538502 3.624405 -0.2135667 -3.538502 3.624405 -0.2135667 3.538502 3.624405 0.2135667 -3.538502 3.624405 0.2135667 3.538502</float_array>
+          <technique_common>
+            <accessor source="#立方体_040-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_040-mesh-normals">
+          <float_array id="立方体_040-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_040-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_040-mesh-map-0">
+          <float_array id="立方体_040-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_040-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_040-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_040-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_040-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_040-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_040-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_039-mesh" name="立方体.039">
+      <mesh>
+        <source id="立方体_039-mesh-positions">
+          <float_array id="立方体_039-mesh-positions-array" count="24">-9.24041 -0.3868065 -3.538502 -9.24041 -0.3868065 3.538502 -9.24041 0.3868065 -3.538502 -9.24041 0.3868065 3.538502 9.24041 -0.3868065 -3.538502 9.24041 -0.3868065 3.538502 9.24041 0.3868065 -3.538502 9.24041 0.3868065 3.538502</float_array>
+          <technique_common>
+            <accessor source="#立方体_039-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_039-mesh-normals">
+          <float_array id="立方体_039-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_039-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_039-mesh-map-0">
+          <float_array id="立方体_039-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_039-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_039-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_039-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_039-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_039-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_039-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_037-mesh" name="立方体.037">
+      <mesh>
+        <source id="立方体_037-mesh-positions">
+          <float_array id="立方体_037-mesh-positions-array" count="24">-0.1094408 -2.828996 -3.538504 -0.1094408 -2.828996 3.538504 -0.1094408 2.828996 -3.538504 -0.1094408 2.828996 3.538504 0.1094408 -2.828996 -3.538504 0.1094408 -2.828996 3.538504 0.1094408 2.828996 -3.538504 0.1094408 2.828996 3.538504</float_array>
+          <technique_common>
+            <accessor source="#立方体_037-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_037-mesh-normals">
+          <float_array id="立方体_037-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_037-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_037-mesh-map-0">
+          <float_array id="立方体_037-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_037-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_037-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_037-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_037-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_037-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_037-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_036-mesh" name="立方体.036">
+      <mesh>
+        <source id="立方体_036-mesh-positions">
+          <float_array id="立方体_036-mesh-positions-array" count="24">-0.2143516 -8.555093 -3.538504 -0.2143516 -8.555093 3.538504 -0.2143516 8.555093 -3.538504 -0.2143516 8.555093 3.538504 0.2143516 -8.555093 -3.538504 0.2143516 -8.555093 3.538504 0.2143516 8.555093 -3.538504 0.2143516 8.555093 3.538504</float_array>
+          <technique_common>
+            <accessor source="#立方体_036-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_036-mesh-normals">
+          <float_array id="立方体_036-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_036-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_036-mesh-map-0">
+          <float_array id="立方体_036-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_036-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_036-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_036-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_036-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_036-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_036-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_035-mesh" name="立方体.035">
+      <mesh>
+        <source id="立方体_035-mesh-positions">
+          <float_array id="立方体_035-mesh-positions-array" count="24">-0.07068824 -6.46914 -3.5385 -0.07068824 -6.46914 3.5385 -0.07068824 6.46914 -3.5385 -0.07068824 6.46914 3.5385 0.07068824 -6.46914 -3.5385 0.07068824 -6.46914 3.5385 0.07068824 6.46914 -3.5385 0.07068824 6.46914 3.5385</float_array>
+          <technique_common>
+            <accessor source="#立方体_035-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_035-mesh-normals">
+          <float_array id="立方体_035-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_035-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_035-mesh-map-0">
+          <float_array id="立方体_035-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_035-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_035-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_035-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_035-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_035-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_035-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_034-mesh" name="立方体.034">
+      <mesh>
+        <source id="立方体_034-mesh-positions">
+          <float_array id="立方体_034-mesh-positions-array" count="24">-2.883205 -0.2039632 -3.538508 -2.883205 -0.2039632 3.538508 -2.883205 0.2039632 -3.538508 -2.883205 0.2039632 3.538508 2.883205 -0.2039632 -3.538508 2.883205 -0.2039632 3.538508 2.883205 0.2039632 -3.538508 2.883205 0.2039632 3.538508</float_array>
+          <technique_common>
+            <accessor source="#立方体_034-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_034-mesh-normals">
+          <float_array id="立方体_034-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_034-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_034-mesh-map-0">
+          <float_array id="立方体_034-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_034-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_034-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_034-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_034-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_034-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_034-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_031-mesh" name="立方体.031">
+      <mesh>
+        <source id="立方体_031-mesh-positions">
+          <float_array id="立方体_031-mesh-positions-array" count="24">-0.5201435 -7.410884 -3.5385 -0.5201435 -7.410884 3.5385 -0.5201435 7.410884 -3.5385 -0.5201435 7.410884 3.5385 0.5201435 -7.410884 -3.5385 0.5201435 -7.410884 3.5385 0.5201435 7.410884 -3.5385 0.5201435 7.410884 3.5385</float_array>
+          <technique_common>
+            <accessor source="#立方体_031-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_031-mesh-normals">
+          <float_array id="立方体_031-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_031-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_031-mesh-map-0">
+          <float_array id="立方体_031-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_031-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_031-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_031-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_031-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_031-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_031-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_030-mesh" name="立方体.030">
+      <mesh>
+        <source id="立方体_030-mesh-positions">
+          <float_array id="立方体_030-mesh-positions-array" count="24">-3.687463 -0.3731356 -3.538504 -3.687463 -0.3731356 3.538504 -3.687463 0.3731356 -3.538504 -3.687463 0.3731356 3.538504 3.687463 -0.3731356 -3.538504 3.687463 -0.3731356 3.538504 3.687463 0.3731356 -3.538504 3.687463 0.3731356 3.538504</float_array>
+          <technique_common>
+            <accessor source="#立方体_030-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_030-mesh-normals">
+          <float_array id="立方体_030-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_030-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_030-mesh-map-0">
+          <float_array id="立方体_030-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_030-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_030-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_030-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_030-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_030-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_030-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_029-mesh" name="立方体.029">
+      <mesh>
+        <source id="立方体_029-mesh-positions">
+          <float_array id="立方体_029-mesh-positions-array" count="24">-7.098899 -0.3868065 -3.538504 -7.098899 -0.3868065 3.538504 -7.098899 0.3868065 -3.538504 -7.098899 0.3868065 3.538504 7.098899 -0.3868065 -3.538504 7.098899 -0.3868065 3.538504 7.098899 0.3868065 -3.538504 7.098899 0.3868065 3.538504</float_array>
+          <technique_common>
+            <accessor source="#立方体_029-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_029-mesh-normals">
+          <float_array id="立方体_029-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_029-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_029-mesh-map-0">
+          <float_array id="立方体_029-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_029-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_029-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_029-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_029-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_029-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_029-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="平面_002-mesh" name="平面.002">
+      <mesh>
+        <source id="平面_002-mesh-positions">
+          <float_array id="平面_002-mesh-positions-array" count="12">-1 -1 0 1 -1 0 -1 1 0 1 1 0</float_array>
+          <technique_common>
+            <accessor source="#平面_002-mesh-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="平面_002-mesh-normals">
+          <float_array id="平面_002-mesh-normals-array" count="3">0 0 1</float_array>
+          <technique_common>
+            <accessor source="#平面_002-mesh-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="平面_002-mesh-map-0">
+          <float_array id="平面_002-mesh-map-0-array" count="12">1 0 0 1 0 0 1 0 1 1 0 1</float_array>
+          <technique_common>
+            <accessor source="#平面_002-mesh-map-0-array" count="6" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="平面_002-mesh-vertices">
+          <input semantic="POSITION" source="#平面_002-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="2">
+          <input semantic="VERTEX" source="#平面_002-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#平面_002-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#平面_002-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 1 0 3 3 0 4 2 0 5</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_028-mesh" name="立方体.028">
+      <mesh>
+        <source id="立方体_028-mesh-positions">
+          <float_array id="立方体_028-mesh-positions-array" count="24">-2.749687 -0.604883 -3.538499 -2.749687 -0.604883 3.538499 -2.749687 0.604883 -3.538499 -2.749687 0.604883 3.538499 2.749687 -0.604883 -3.538499 2.749687 -0.604883 3.538499 2.749687 0.604883 -3.538499 2.749687 0.604883 3.538499</float_array>
+          <technique_common>
+            <accessor source="#立方体_028-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_028-mesh-normals">
+          <float_array id="立方体_028-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_028-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_028-mesh-map-0">
+          <float_array id="立方体_028-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_028-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_028-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_028-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_028-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_028-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_028-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_027-mesh" name="立方体.027">
+      <mesh>
+        <source id="立方体_027-mesh-positions">
+          <float_array id="立方体_027-mesh-positions-array" count="24">-0.2627115 -2.330296 -3.538504 -0.2627115 -2.330296 3.538504 -0.2627115 2.330296 -3.538504 -0.2627115 2.330296 3.538504 0.2627115 -2.330296 -3.538504 0.2627115 -2.330296 3.538504 0.2627115 2.330296 -3.538504 0.2627115 2.330296 3.538504</float_array>
+          <technique_common>
+            <accessor source="#立方体_027-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_027-mesh-normals">
+          <float_array id="立方体_027-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_027-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_027-mesh-map-0">
+          <float_array id="立方体_027-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_027-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_027-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_027-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_027-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_027-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_027-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_026-mesh" name="立方体.026">
+      <mesh>
+        <source id="立方体_026-mesh-positions">
+          <float_array id="立方体_026-mesh-positions-array" count="24">-1.931707 -0.2490539 -3.538504 -1.931707 -0.2490539 3.538504 -1.931707 0.2490539 -3.538504 -1.931707 0.2490539 3.538504 1.931707 -0.2490539 -3.538504 1.931707 -0.2490539 3.538504 1.931707 0.2490539 -3.538504 1.931707 0.2490539 3.538504</float_array>
+          <technique_common>
+            <accessor source="#立方体_026-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_026-mesh-normals">
+          <float_array id="立方体_026-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_026-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_026-mesh-map-0">
+          <float_array id="立方体_026-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_026-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_026-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_026-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_026-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_026-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_026-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_025-mesh" name="立方体.025">
+      <mesh>
+        <source id="立方体_025-mesh-positions">
+          <float_array id="立方体_025-mesh-positions-array" count="24">-0.1764154 -2.513427 -3.538508 -0.1764154 -2.513427 3.538508 -0.1764154 2.513427 -3.538508 -0.1764154 2.513427 3.538508 0.1764154 -2.513427 -3.538508 0.1764154 -2.513427 3.538508 0.1764154 2.513427 -3.538508 0.1764154 2.513427 3.538508</float_array>
+          <technique_common>
+            <accessor source="#立方体_025-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_025-mesh-normals">
+          <float_array id="立方体_025-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_025-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_025-mesh-map-0">
+          <float_array id="立方体_025-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_025-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_025-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_025-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_025-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_025-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_025-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_024-mesh" name="立方体.024">
+      <mesh>
+        <source id="立方体_024-mesh-positions">
+          <float_array id="立方体_024-mesh-positions-array" count="24">-0.3933296 -1.521203 -3.538508 -0.3933296 -1.521203 3.538508 -0.3933296 1.521203 -3.538508 -0.3933296 1.521203 3.538508 0.3933296 -1.521203 -3.538508 0.3933296 -1.521203 3.538508 0.3933296 1.521203 -3.538508 0.3933296 1.521203 3.538508</float_array>
+          <technique_common>
+            <accessor source="#立方体_024-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_024-mesh-normals">
+          <float_array id="立方体_024-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_024-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_024-mesh-map-0">
+          <float_array id="立方体_024-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_024-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_024-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_024-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_024-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_024-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_024-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_023-mesh" name="立方体.023">
+      <mesh>
+        <source id="立方体_023-mesh-positions">
+          <float_array id="立方体_023-mesh-positions-array" count="24">-3.861367 -0.3023615 -3.538507 -3.861367 -0.3023615 3.538507 -3.861367 0.3023615 -3.538507 -3.861367 0.3023615 3.538507 3.861367 -0.3023615 -3.538507 3.861367 -0.3023615 3.538507 3.861367 0.3023615 -3.538507 3.861367 0.3023615 3.538507</float_array>
+          <technique_common>
+            <accessor source="#立方体_023-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_023-mesh-normals">
+          <float_array id="立方体_023-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_023-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_023-mesh-map-0">
+          <float_array id="立方体_023-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_023-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_023-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_023-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_023-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_023-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_023-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_022-mesh" name="立方体.022">
+      <mesh>
+        <source id="立方体_022-mesh-positions">
+          <float_array id="立方体_022-mesh-positions-array" count="24">-0.4966717 -4.552536 -3.538507 -0.4966717 -4.552536 3.538507 -0.4966717 4.552536 -3.538507 -0.4966717 4.552536 3.538507 0.4966717 -4.552536 -3.538507 0.4966717 -4.552536 3.538507 0.4966717 4.552536 -3.538507 0.4966717 4.552536 3.538507</float_array>
+          <technique_common>
+            <accessor source="#立方体_022-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_022-mesh-normals">
+          <float_array id="立方体_022-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_022-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_022-mesh-map-0">
+          <float_array id="立方体_022-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_022-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_022-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_022-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_022-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_022-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_022-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_021-mesh" name="立方体.021">
+      <mesh>
+        <source id="立方体_021-mesh-positions">
+          <float_array id="立方体_021-mesh-positions-array" count="24">-4.767204 -0.518106 -3.538504 -4.767204 -0.518106 3.538504 -4.767204 0.518106 -3.538504 -4.767204 0.518106 3.538504 4.767204 -0.518106 -3.538504 4.767204 -0.518106 3.538504 4.767204 0.518106 -3.538504 4.767204 0.518106 3.538504</float_array>
+          <technique_common>
+            <accessor source="#立方体_021-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_021-mesh-normals">
+          <float_array id="立方体_021-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_021-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_021-mesh-map-0">
+          <float_array id="立方体_021-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_021-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_021-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_021-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_021-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_021-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_021-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_020-mesh" name="立方体.020">
+      <mesh>
+        <source id="立方体_020-mesh-positions">
+          <float_array id="立方体_020-mesh-positions-array" count="24">-0.3259697 -3.033899 -3.538506 -0.3259697 -3.033899 3.538506 -0.3259697 3.033899 -3.538506 -0.3259697 3.033899 3.538506 0.3259697 -3.033899 -3.538506 0.3259697 -3.033899 3.538506 0.3259697 3.033899 -3.538506 0.3259697 3.033899 3.538506</float_array>
+          <technique_common>
+            <accessor source="#立方体_020-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_020-mesh-normals">
+          <float_array id="立方体_020-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_020-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_020-mesh-map-0">
+          <float_array id="立方体_020-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_020-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_020-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_020-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_020-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_020-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_020-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_019-mesh" name="立方体.019">
+      <mesh>
+        <source id="立方体_019-mesh-positions">
+          <float_array id="立方体_019-mesh-positions-array" count="24">-4.438458 -0.4310057 -3.538504 -4.438458 -0.4310057 3.538504 -4.438458 0.4310057 -3.538504 -4.438458 0.4310057 3.538504 4.438458 -0.4310057 -3.538504 4.438458 -0.4310057 3.538504 4.438458 0.4310057 -3.538504 4.438458 0.4310057 3.538504</float_array>
+          <technique_common>
+            <accessor source="#立方体_019-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_019-mesh-normals">
+          <float_array id="立方体_019-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_019-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_019-mesh-map-0">
+          <float_array id="立方体_019-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_019-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_019-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_019-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_019-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_019-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_019-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_018-mesh" name="立方体.018">
+      <mesh>
+        <source id="立方体_018-mesh-positions">
+          <float_array id="立方体_018-mesh-positions-array" count="24">-0.3929057 -3.385316 -3.538507 -0.3929057 -3.385316 3.538507 -0.3929057 3.385316 -3.538507 -0.3929057 3.385316 3.538507 0.3929057 -3.385316 -3.538507 0.3929057 -3.385316 3.538507 0.3929057 3.385316 -3.538507 0.3929057 3.385316 3.538507</float_array>
+          <technique_common>
+            <accessor source="#立方体_018-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_018-mesh-normals">
+          <float_array id="立方体_018-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_018-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_018-mesh-map-0">
+          <float_array id="立方体_018-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_018-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_018-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_018-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_018-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_018-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_018-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_017-mesh" name="立方体.017">
+      <mesh>
+        <source id="立方体_017-mesh-positions">
+          <float_array id="立方体_017-mesh-positions-array" count="24">-2.875917 -0.5322065 -3.538504 -2.875917 -0.5322065 3.538504 -2.875917 0.5322065 -3.538504 -2.875917 0.5322065 3.538504 2.875917 -0.5322065 -3.538504 2.875917 -0.5322065 3.538504 2.875917 0.5322065 -3.538504 2.875917 0.5322065 3.538504</float_array>
+          <technique_common>
+            <accessor source="#立方体_017-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_017-mesh-normals">
+          <float_array id="立方体_017-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_017-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_017-mesh-map-0">
+          <float_array id="立方体_017-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_017-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_017-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_017-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_017-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_017-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_017-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_016-mesh" name="立方体.016">
+      <mesh>
+        <source id="立方体_016-mesh-positions">
+          <float_array id="立方体_016-mesh-positions-array" count="24">-0.3252158 -2.074944 -3.538502 -0.3252158 -2.074944 3.538502 -0.3252158 2.074944 -3.538502 -0.3252158 2.074944 3.538502 0.3252158 -2.074944 -3.538502 0.3252158 -2.074944 3.538502 0.3252158 2.074944 -3.538502 0.3252158 2.074944 3.538502</float_array>
+          <technique_common>
+            <accessor source="#立方体_016-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_016-mesh-normals">
+          <float_array id="立方体_016-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_016-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_016-mesh-map-0">
+          <float_array id="立方体_016-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_016-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_016-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_016-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_016-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_016-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_016-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_015-mesh" name="立方体.015">
+      <mesh>
+        <source id="立方体_015-mesh-positions">
+          <float_array id="立方体_015-mesh-positions-array" count="24">-0.387938 -7.091448 -3.538504 -0.387938 -7.091448 3.538504 -0.387938 7.091448 -3.538504 -0.387938 7.091448 3.538504 0.387938 -7.091448 -3.538504 0.387938 -7.091448 3.538504 0.387938 7.091448 -3.538504 0.387938 7.091448 3.538504</float_array>
+          <technique_common>
+            <accessor source="#立方体_015-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_015-mesh-normals">
+          <float_array id="立方体_015-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_015-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_015-mesh-map-0">
+          <float_array id="立方体_015-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_015-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_015-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_015-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_015-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_015-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_015-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_014-mesh" name="立方体.014">
+      <mesh>
+        <source id="立方体_014-mesh-positions">
+          <float_array id="立方体_014-mesh-positions-array" count="24">-5.117729 -0.2520721 -3.538502 -5.117729 -0.2520721 3.538502 -5.117729 0.2520721 -3.538502 -5.117729 0.2520721 3.538502 5.117729 -0.2520721 -3.538502 5.117729 -0.2520721 3.538502 5.117729 0.2520721 -3.538502 5.117729 0.2520721 3.538502</float_array>
+          <technique_common>
+            <accessor source="#立方体_014-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_014-mesh-normals">
+          <float_array id="立方体_014-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_014-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_014-mesh-map-0">
+          <float_array id="立方体_014-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_014-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_014-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_014-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_014-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_014-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_014-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_012-mesh" name="立方体.012">
+      <mesh>
+        <source id="立方体_012-mesh-positions">
+          <float_array id="立方体_012-mesh-positions-array" count="24">-0.3862267 -2.681554 -3.538504 -0.3862267 -2.681554 3.538504 -0.3862267 2.681554 -3.538504 -0.3862267 2.681554 3.538504 0.3862267 -2.681554 -3.538504 0.3862267 -2.681554 3.538504 0.3862267 2.681554 -3.538504 0.3862267 2.681554 3.538504</float_array>
+          <technique_common>
+            <accessor source="#立方体_012-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_012-mesh-normals">
+          <float_array id="立方体_012-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_012-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_012-mesh-map-0">
+          <float_array id="立方体_012-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_012-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_012-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_012-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_012-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_012-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_012-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_011-mesh" name="立方体.011">
+      <mesh>
+        <source id="立方体_011-mesh-positions">
+          <float_array id="立方体_011-mesh-positions-array" count="24">-4.429319 -0.6139717 -3.538504 -4.429319 -0.6139717 3.538504 -4.429319 0.6139717 -3.538504 -4.429319 0.6139717 3.538504 4.429319 -0.6139717 -3.538504 4.429319 -0.6139717 3.538504 4.429319 0.6139717 -3.538504 4.429319 0.6139717 3.538504</float_array>
+          <technique_common>
+            <accessor source="#立方体_011-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_011-mesh-normals">
+          <float_array id="立方体_011-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_011-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_011-mesh-map-0">
+          <float_array id="立方体_011-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_011-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_011-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_011-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_011-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_011-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_011-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_010-mesh" name="立方体.010">
+      <mesh>
+        <source id="立方体_010-mesh-positions">
+          <float_array id="立方体_010-mesh-positions-array" count="24">-3.455533 -0.4789028 -3.538504 -3.455533 -0.4789028 3.538504 -3.455533 0.4789028 -3.538504 -3.455533 0.4789028 3.538504 3.455533 -0.4789028 -3.538504 3.455533 -0.4789028 3.538504 3.455533 0.4789028 -3.538504 3.455533 0.4789028 3.538504</float_array>
+          <technique_common>
+            <accessor source="#立方体_010-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_010-mesh-normals">
+          <float_array id="立方体_010-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_010-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_010-mesh-map-0">
+          <float_array id="立方体_010-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_010-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_010-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_010-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_010-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_010-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_010-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_009-mesh" name="立方体.009">
+      <mesh>
+        <source id="立方体_009-mesh-positions">
+          <float_array id="立方体_009-mesh-positions-array" count="24">-0.4792109 -5.130835 -3.538504 -0.4792109 -5.130835 3.538504 -0.4792109 5.130835 -3.538504 -0.4792109 5.130835 3.538504 0.4792109 -5.130835 -3.538504 0.4792109 -5.130835 3.538504 0.4792109 5.130835 -3.538504 0.4792109 5.130835 3.538504</float_array>
+          <technique_common>
+            <accessor source="#立方体_009-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_009-mesh-normals">
+          <float_array id="立方体_009-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_009-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_009-mesh-map-0">
+          <float_array id="立方体_009-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_009-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_009-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_009-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_009-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_009-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_009-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_008-mesh" name="立方体.008">
+      <mesh>
+        <source id="立方体_008-mesh-positions">
+          <float_array id="立方体_008-mesh-positions-array" count="24">-2.169795 -0.2811542 -3.538504 -2.169795 -0.2811542 3.538504 -2.169795 0.2811542 -3.538504 -2.169795 0.2811542 3.538504 2.169795 -0.2811542 -3.538504 2.169795 -0.2811542 3.538504 2.169795 0.2811542 -3.538504 2.169795 0.2811542 3.538504</float_array>
+          <technique_common>
+            <accessor source="#立方体_008-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_008-mesh-normals">
+          <float_array id="立方体_008-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_008-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_008-mesh-map-0">
+          <float_array id="立方体_008-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_008-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_008-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_008-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_008-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_008-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_008-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_007-mesh" name="立方体.007">
+      <mesh>
+        <source id="立方体_007-mesh-positions">
+          <float_array id="立方体_007-mesh-positions-array" count="24">-0.3764811 -4.220574 -3.538504 -0.3764811 -4.220574 3.538504 -0.3764811 4.220574 -3.538504 -0.3764811 4.220574 3.538504 0.3764811 -4.220574 -3.538504 0.3764811 -4.220574 3.538504 0.3764811 4.220574 -3.538504 0.3764811 4.220574 3.538504</float_array>
+          <technique_common>
+            <accessor source="#立方体_007-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_007-mesh-normals">
+          <float_array id="立方体_007-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_007-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_007-mesh-map-0">
+          <float_array id="立方体_007-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_007-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_007-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_007-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_007-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_007-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_007-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_006-mesh" name="立方体.006">
+      <mesh>
+        <source id="立方体_006-mesh-positions">
+          <float_array id="立方体_006-mesh-positions-array" count="24">-6.137678 -0.4141579 -3.538502 -6.137678 -0.4141579 3.538502 -6.137678 0.4141579 -3.538502 -6.137678 0.4141579 3.538502 6.137678 -0.4141579 -3.538502 6.137678 -0.4141579 3.538502 6.137678 0.4141579 -3.538502 6.137678 0.4141579 3.538502</float_array>
+          <technique_common>
+            <accessor source="#立方体_006-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_006-mesh-normals">
+          <float_array id="立方体_006-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_006-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_006-mesh-map-0">
+          <float_array id="立方体_006-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_006-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_006-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_006-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_006-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_006-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_006-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="立方体_005-mesh" name="立方体.005">
+      <mesh>
+        <source id="立方体_005-mesh-positions">
+          <float_array id="立方体_005-mesh-positions-array" count="24">-0.2857933 -2.969176 -3.538502 -0.2857933 -2.969176 3.538502 -0.2857933 2.969176 -3.538502 -0.2857933 2.969176 3.538502 0.2857933 -2.969176 -3.538502 0.2857933 -2.969176 3.538502 0.2857933 2.969176 -3.538502 0.2857933 2.969176 3.538502</float_array>
+          <technique_common>
+            <accessor source="#立方体_005-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_005-mesh-normals">
+          <float_array id="立方体_005-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 -1 0 0 0 -1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#立方体_005-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="立方体_005-mesh-map-0">
+          <float_array id="立方体_005-mesh-map-0-array" count="72">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.625 0.5 0.375 0.75 0.375 0.5 0.625 0.75 0.375 1 0.375 0.75 0.375 0.5 0.125 0.75 0.125 0.5 0.875 0.5 0.625 0.75 0.625 0.5 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.75 0.125 0.75 0.875 0.5 0.875 0.75 0.625 0.75</float_array>
+          <technique_common>
+            <accessor source="#立方体_005-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="立方体_005-mesh-vertices">
+          <input semantic="POSITION" source="#立方体_005-mesh-positions"/>
+        </vertices>
+        <triangles material="brick_wallbrick_wall-material" count="12">
+          <input semantic="VERTEX" source="#立方体_005-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#立方体_005-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#立方体_005-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 7 2 6 4 2 7 6 2 8 5 3 9 0 3 10 4 3 11 6 4 12 0 4 13 2 4 14 3 5 15 5 5 16 7 5 17 1 0 18 3 0 19 2 0 20 3 1 21 7 1 22 6 1 23 7 2 24 5 2 25 4 2 26 5 3 27 1 3 28 0 3 29 6 4 30 4 4 31 0 4 32 3 5 33 1 5 34 5 5 35</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="立方体_031" name="立方体.031" type="NODE">
+        <matrix sid="transform">1 0 0 -13.49482 0 1 0 14.74752 0 0 1 3.538504 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_045-mesh" name="立方体.031">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_036" name="立方体.036" type="NODE">
+        <matrix sid="transform">1 0 0 -3.033602 0 1 0 14.76703 0 0 1 3.538499 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_044-mesh" name="立方体.036">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_035" name="立方体.035" type="NODE">
+        <matrix sid="transform">1 0 0 7.308611 0 1 0 14.76703 0 0 1 3.538499 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_043-mesh" name="立方体.035">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_026" name="立方体.026" type="NODE">
+        <matrix sid="transform">1 0 0 19.34931 0 1 0 14.76703 0 0 1 3.538499 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_042-mesh" name="立方体.026">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_034" name="立方体.034" type="NODE">
+        <matrix sid="transform">1 0 0 -16.41752 0 1 0 -10.38667 0 0 1 3.538504 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_041-mesh" name="立方体.034">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_033" name="立方体.033" type="NODE">
+        <matrix sid="transform">1 0 0 -12.9997 0 1 0 -12.43193 0 0 1 3.538506 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_040-mesh" name="立方体.033">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_032" name="立方体.032" type="NODE">
+        <matrix sid="transform">1 0 0 -0.1348863 0 1 0 -12.25869 0 0 1 3.538506 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_039-mesh" name="立方体.032">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_030" name="立方体.030" type="NODE">
+        <matrix sid="transform">1 0 0 -16.5302 0 1 0 11.81134 0 0 1 3.538504 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_037-mesh" name="立方体.030">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_029" name="立方体.029" type="NODE">
+        <matrix sid="transform">1 0 0 -16.42529 0 1 0 0.4272528 0 0 1 3.538504 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_036-mesh" name="立方体.029">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_028" name="立方体.028" type="NODE">
+        <matrix sid="transform">1 0 0 31.64784 0 1 0 8.672756 0 0 1 3.538507 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_035-mesh" name="立方体.028">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_027" name="立方体.027" type="NODE">
+        <matrix sid="transform">1 0 0 28.69395 0 1 0 14.93793 0 0 1 3.538499 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_034-mesh" name="立方体.027">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_025" name="立方体.025" type="NODE">
+        <matrix sid="transform">1 0 0 31.19839 0 1 0 -5.207268 0 0 1 3.538507 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_031-mesh" name="立方体.025">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_024" name="立方体.024" type="NODE">
+        <matrix sid="transform">1 0 0 26.99078 0 1 0 -12.24502 0 0 1 3.538504 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_030-mesh" name="立方体.024">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体" name="立方体" type="NODE">
+        <matrix sid="transform">1 0 0 16.20442 0 1 0 -12.25869 0 0 1 3.538504 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_029-mesh" name="立方体">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="平面" name="平面" type="NODE">
+        <matrix sid="transform">25.31493 0 0 6.956988 0 15.58739 0 0.4489713 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#平面_002-mesh" name="平面">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_023" name="立方体.023" type="NODE">
+        <matrix sid="transform">1 0 0 28.96885 0 1 0 1.598733 0 0 1 3.538507 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_028-mesh" name="立方体.023">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_022" name="立方体.022" type="NODE">
+        <matrix sid="transform">1 0 0 25.62553 0 1 0 -4.80957 0 0 1 3.538504 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_027-mesh" name="立方体.022">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_021" name="立方体.021" type="NODE">
+        <matrix sid="transform">1 0 0 25.88824 0 1 0 -7.38892 0 0 1 3.538504 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_026-mesh" name="立方体.021">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_020" name="立方体.020" type="NODE">
+        <matrix sid="transform">1 0 0 25.63433 0 1 0 8.836325 0 0 1 3.538498 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_025-mesh" name="立方体.020">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_019" name="立方体.019" type="NODE">
+        <matrix sid="transform">1 0 0 25.41742 0 1 0 12.87096 0 0 1 3.538499 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_024-mesh" name="立方体.019">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_018" name="立方体.018" type="NODE">
+        <matrix sid="transform">1 0 0 21.16272 0 1 0 11.65211 0 0 1 3.538498 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_023-mesh" name="立方体.018">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_017" name="立方体.017" type="NODE">
+        <matrix sid="transform">1 0 0 21.33969 0 1 0 3.823759 0 0 1 3.5385 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_022-mesh" name="立方体.017">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_016" name="立方体.016" type="NODE">
+        <matrix sid="transform">1 0 0 19.02949 0 1 0 -1.246883 0 0 1 3.538504 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_021-mesh" name="立方体.016">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_015" name="立方体.015" type="NODE">
+        <matrix sid="transform">1 0 0 19.35731 0 1 0 -8.837982 0 0 1 3.538502 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_020-mesh" name="立方体.015">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_014" name="立方体.014" type="NODE">
+        <matrix sid="transform">1 0 0 13.66294 0 1 0 5.219537 0 0 1 3.538504 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_019-mesh" name="立方体.014">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_013" name="立方体.013" type="NODE">
+        <matrix sid="transform">1 0 0 13.28079 0 1 0 11.00684 0 0 1 3.5385 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_018-mesh" name="立方体.013">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_012" name="立方体.012" type="NODE">
+        <matrix sid="transform">1 0 0 11.98144 0 1 0 -5.31264 0 0 1 3.538504 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_017-mesh" name="立方体.012">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_011" name="立方体.011" type="NODE">
+        <matrix sid="transform">1 0 0 0.7448211 0 1 0 -4.796426 0 0 1 3.538506 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_016-mesh" name="立方体.011">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_010" name="立方体.010" type="NODE">
+        <matrix sid="transform">1 0 0 8.717585 0 1 0 -4.780434 0 0 1 3.538504 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_015-mesh" name="立方体.010">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_009" name="立方体.009" type="NODE">
+        <matrix sid="transform">1 0 0 0.4196053 0 1 0 -7.123443 0 0 1 3.538506 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_014-mesh" name="立方体.009">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_008" name="立方体.008" type="NODE">
+        <matrix sid="transform">1 0 0 2.115569 0 1 0 11.7106 0 0 1 3.538504 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_012-mesh" name="立方体.008">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_007" name="立方体.007" type="NODE">
+        <matrix sid="transform">1 0 0 0.7512956 0 1 0 5.102793 0 0 1 3.538504 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_011-mesh" name="立方体.007">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_006" name="立方体.006" type="NODE">
+        <matrix sid="transform">1 0 0 -3.382592 0 1 0 8.782421 0 0 1 3.538504 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_010-mesh" name="立方体.006">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_005" name="立方体.005" type="NODE">
+        <matrix sid="transform">1 0 0 -7.317336 0 1 0 9.261324 0 0 1 3.538504 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_009-mesh" name="立方体.005">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_004" name="立方体.004" type="NODE">
+        <matrix sid="transform">1 0 0 -14.04115 0 1 0 8.701191 0 0 1 3.538504 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_008-mesh" name="立方体.004">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_003" name="立方体.003" type="NODE">
+        <matrix sid="transform">1 0 0 -11.49487 0 1 0 4.76177 0 0 1 3.538504 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_007-mesh" name="立方体.003">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_002" name="立方体.002" type="NODE">
+        <matrix sid="transform">1 0 0 -10.07327 0 1 0 -2.465225 0 0 1 3.538506 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_006-mesh" name="立方体.002">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="立方体_001" name="立方体.001" type="NODE">
+        <matrix sid="transform">1 0 0 -9.089502 0 1 0 -8.902705 0 0 1 3.538506 0 0 0 1</matrix>
+        <instance_geometry url="#立方体_005-mesh" name="立方体.001">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="brick_wallbrick_wall-material" target="#brick_wallbrick_wall-material">
+                <bind_vertex_input semantic="UV 贴图" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

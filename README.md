@@ -73,6 +73,86 @@ roslaunch px4 multi_uav_mavros_sitl_cp.launch
 
 </div>
 
+### world
+更新3个室内地图，1个室外地图  
+室内地图`indoor1.world`：  
+
+<div align="center">
+  
+![](/photos/indoor1截图.png)
+
+</div>
+
+室内地图`indoor2.world`:  
+
+<div align="center">
+  
+![](/photos/indoor2截图.png)
+
+</div>
+
+室内地图`indoor3.world`:  
+
+<div align="center">
+  
+![](/photos/indoor3截图.png)
+
+</div>
+
+室外地图`outdoor.world`:  
+
+<div align="center">
+  
+![](/photos/outdoor截图.png)
+
+</div>
+
+室外地图`outdoor1.world`:  
+
+<div align="center">
+  
+![](/photos/outdoor1截图.png)
+
+</div>
+
+### model
+
+<div align="center">
+  
+|model|details|
+|:---:|:---:|
+|cpr_office|indoor1模型|
+|cpr_ office_construction|indoor2模型|
+|crossroads|十字路口模型 |
+
+</div>
+
+### 为robot添加groundtruth
+添加如下`demo`至`.sdf`文件中  
+```cpp
+<plugin name="p3d_base_controller" filename="libgazebo_ros_p3d.so">
+    <alwaysOn>true</alwaysOn>
+    <updateRate>50.0</updateRate>
+    <bodyName>base_link</bodyName>
+    <topicName>ground_truth/state</topicName>
+    <gaussianNoise>0.01</gaussianNoise>
+    <frameName>world</frameName>
+    <xyzOffsets>0 0 0</xyzOffsets>
+    <rpyOffsets>0 0 0</rpyOffsets>
+</plugin>
+```
+
+<div align="center">
+  
+![](/photos/groundture.png)
+
+</div>
+
+
+位置如图☝  
+使用`rostopic echo /ground_truth/state`获得机器人位姿  
+可在`<topicName>ground_truth/state</topicName>`处改变`topic`  
+
 ***
 ***
 ### 后续
