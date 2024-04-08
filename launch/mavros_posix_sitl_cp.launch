@@ -16,7 +16,7 @@
     <arg name="world" default="$(find mavlink_sitl_gazebo)/worlds/indoor1.world"/>
     <arg name="sdf" default="$(find mavlink_sitl_gazebo)/models/$(arg vehicle_model)/$(arg vehicle_model).sdf"/>
 
-    <!--<param name="imu_description" textfile="$(find mavlink_sitl_gazebo)/models/imu/my_imu_gazebo.urdf" />-->
+    <param name="imu_description" textfile="$(find mavlink_sitl_gazebo)/models/imu/my_imu_gazebo.urdf" />
     <!-- gazebo configs -->
     <arg name="gui" default="true"/>
     <arg name="debug" default="false"/>
@@ -53,5 +53,6 @@
         <arg name="fcu_url" value="$(arg fcu_url)"/>
         <arg name="respawn_mavros" value="$(arg respawn_mavros)"/>
     </include>
-    <!--<node pkg="gazebo_ros" type="spawn_model" name="model" args="-urdf -model myimu -x 1 -y 2 -z 0 -param imu_description"  />-->
+    <node pkg="gazebo_ros" type="spawn_model" name="model" args="-urdf -model myimu -x 1 -y 2 -z 0 -param imu_description"  />
+    <node pkg="tf" type="static_transform_publisher" name="tf" args="0 0 0 0 0 0 /base_link /lidar_imu"/>
 </launch>
