@@ -3,7 +3,8 @@
 ***
 ### 配置
 * 本人使用`ubuntu20.04`  
-* 如果还没下载编译`PX4`，建议参考如下网站：  
+* 如果还没下载编译`PX4`，建议参考如下网站：
+* 想要安装PX4仿真环境不要直接git clone这个代码库，按照下面这两个链接一步步配置，出现bug选择百度等搜索引擎解决，我也不记得怎么修理    
 https://docs.qq.com/doc/DZlNOVnhaV0hkaktL?dver=  
 https://blog.csdn.net/qq_38250687/article/details/123251913
 ***
@@ -12,7 +13,8 @@ https://blog.csdn.net/qq_38250687/article/details/123251913
 ```
 PX4-Autopilot/launch 存放launch文件  
 PX4-Autopilot/Tools/sitl_gazebo/models 存放models  
-PX4-Autopilot/Tools/sitl_gazebo/worlds 存放worlds  
+PX4-Autopilot/Tools/sitl_gazebo/worlds 存放worlds
+/home/(user)/.gazebo/models 这里也存放了一部分models  
 ```
 `launch`文件夹和`models`文件夹中带`_cp`后缀的为本人修改的  
 ***
